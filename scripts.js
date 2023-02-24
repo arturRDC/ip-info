@@ -1,25 +1,33 @@
 'use strict'
 import { ipInfo } from './ipInfo.js'
 
-ipInfo('google.com', (error, response) => {
-  const par = document.querySelector('p')
+ipInfo('', (error, response) => {
+  const ipCard = document.querySelector('.ip')
+  const vpnCard = document.querySelector('.vpn')
+  const mobileCard = document.querySelector('.mobile')
+  const cityCard = document.querySelector('.city')
+  const countryCard = document.querySelector('.country')
+  const ispCard = document.querySelector('.isp')
   if (error) {
     console.log(error)
   } else {
-    par.textContent = response.query
+    ipCard.textContent = response.query
     console.log(response)
+    ipCard.textContent = `Ip: ${response.query}`
 
-    // if (data.proxy) {
-    //   console.log('Você está usando vpn ou proxy.')
-    // } else {
-    //   console.log('Você não está usando vpn ou proxy.')
-    // }
-    // if (data.mobile) {
-    //   console.log('Você acessou o site através de um smartphone.')
-    // } else {
-    //   console.log('Você acessou o site através de um computador.')
-    // }
-    // const displayText = `Seu ip é ${data.query}. Você está em ${data.city}, ${data.regionName}, ${data.country}. Seu provedor de internet é ${data.isp}.`
+    if (response.proxy) {
+      vpnCard.textContent += 'Você está usando vpn ou proxy.'
+    } else {
+      vpnCard.textContent += 'Você não está usando vpn ou proxy.'
+    }
+    if (response.mobile) {
+      mobileCard.textContent += 'Você acessou o site através de um smartphone'
+    } else {
+      mobileCard.textContent += 'Você acessou o site através de um computador'
+    }
+    countryCard.textContent = `Você está em ${response.country}`
+    cityCard.textContent = `Sua cidade é ${response.city}`
+    ispCard.textContent = `Seu provedor de internet é ${response.isp}.`
     // console.log(displayText)
   }
 })

@@ -1,0 +1,50 @@
+body {
+  background-color: #f6fafd;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 87vh;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #1e375a;
+}
+.logo {
+  color: #1e375a;
+  font-size: 25px;
+}
+
+.navbar {
+  display: flex;
+  min-width: 100vh;
+  max-height: 13vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin: 1rem;
+  gap: 2rem;
+}
+
+.nav-right {
+  display: flex;
+  gap: 2em;
+}
+
+.w3-card {
+  padding: 1.5rem;
+  color: #192d46;
+  background-color: #fdfeff;
+  max-width: 27rem;
+}
+
+.w3-input {
+  background-color: #fdfeff;
+}
